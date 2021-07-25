@@ -13,5 +13,6 @@ module.exports = {
     'import/prefer-default-export': 'off',
     'no-param-reassign': 'off',
     'no-await-in-loop': 'off',
+    '@typescript-eslint/no-shadow': 'off',
   },
 }

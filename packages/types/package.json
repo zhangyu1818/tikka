@@ -1,7 +1,4 @@
 {
   "name": "tikka-types",
-  "version": "0.0.0",
-  "scripts": {
-    "build": "tsc"
-  }
+  "version": "0.0.0-test.0"
 }

@@ -2,19 +2,12 @@ import path from 'path'
 import babel from '@babel/core'
 import { replaceExt } from 'tikka-shared'
 
-import type { TransformOptions as BabelBasicTransformOptions } from '@babel/core'
-import type { Transform, TransformOptions } from 'tikka-types/transform'
+import type { Transform } from 'tikka-types/transform'
 
+import { DEFAULT_BABEL_CONFIG } from './default'
 import { mergeOptions } from './utils'
 
-export type BabelFormat = 'commonjs' | 'module'
-
-export interface BabelTransformOptions extends TransformOptions<string> {
-  format?: BabelFormat | Partial<Record<BabelFormat, string>>
-  transformOptions?:
-    | BabelBasicTransformOptions
-    | ((format: BabelFormat) => BabelBasicTransformOptions)
-}
+import type { BabelTransformOptions, BabelFormat } from './interface'
 
 const transform: Transform<string, BabelTransformOptions> = (options = {}) => async (state) => {
   const {
@@ -25,7 +18,7 @@ const transform: Transform<string, BabelTransformOptions> = (options = {}) => as
     outDir,
     outputFile,
     logger,
-    transformOptions,
+    transformOptions = DEFAULT_BABEL_CONFIG,
   } = mergeOptions(options, state)
 
   const files = baseFiles.filter((filePath) => extensions.every((ext) => !filePath.endsWith(ext)))
@@ -36,11 +29,13 @@ const transform: Transform<string, BabelTransformOptions> = (options = {}) => as
 
   // eslint-disable-next-line no-restricted-syntax
   for (const [format, output] of Object.entries(formatConfig)) {
+    logger.info(`start to transform ${format}`)
+
     // eslint-disable-next-line no-restricted-syntax
     for (const filePath of files) {
       const option =
         typeof transformOptions === 'function'
-          ? transformOptions(format as BabelFormat)
+          ? transformOptions(format as BabelFormat, filePath)
           : transformOptions
       const result = await babel.transformFileAsync(filePath, option)
       if (result) {
@@ -50,9 +45,13 @@ const transform: Transform<string, BabelTransformOptions> = (options = {}) => as
         await outputFile(outputPath, code)
       }
     }
+
+    logger.success(`${format} transform success`)
   }
 
-  logger.success(`transform success`)
+  logger.success(`babel transform success`)
 }
 
 transform.transformer = true
+
+export default transform

@@ -10,5 +10,3 @@
 .idea
 
 lib
-
-**/types/*.d.ts

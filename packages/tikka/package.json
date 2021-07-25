@@ -1,6 +1,6 @@
 {
   "name": "tikka",
-  "version": "0.0.0",
+  "version": "0.0.0-test.0",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
   "scripts": {
@@ -11,7 +11,8 @@
     "fs-extra": "^10.0.0",
     "glob": "^7.1.7",
     "tikka-shared": "workspace:*",
-    "tikka-types": "workspace:*"
+    "tikka-types": "workspace:*",
+    "tikka-transform": "workspace:*"
   },
   "devDependencies": {
     "@types/fs-extra": "^9.0.12",

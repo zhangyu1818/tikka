@@ -3,5 +3,5 @@
   "compilerOptions": {
     "emitDeclarationOnly": true
   },
-  "include": ["logger.ts", "transform.ts"]
+  "include": ["logger.d.ts", "transform.d.ts"]
 }
