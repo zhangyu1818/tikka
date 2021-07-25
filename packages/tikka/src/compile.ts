@@ -27,16 +27,15 @@ const compile = (options: CompileOptions) => {
 
   const files: string[] = []
 
-  const transformState: TransformState = {
+  const transformState = {
     cwd,
     source: absoluteSource,
-    extensions: [''],
     files,
     readFile,
     outputFile,
     logger,
     outDir: toArray(outDir),
-  }
+  } as TransformState
 
   const taskQueue: TransformFunc[] = []
 
@@ -55,7 +54,7 @@ const compile = (options: CompileOptions) => {
   const build = async () => {
     logger.info('searching the files...')
 
-    files.concat(findFiles({ source: absoluteSource }))
+    files.push(...findFiles({ source: absoluteSource }))
 
     logger.success('files searching completed')
 

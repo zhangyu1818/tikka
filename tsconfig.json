@@ -1,4 +1,23 @@
 {
-  "extends": "./tsconfig.base.json",
-  "include": ["./packages/*"]
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "commonjs",
+    "strict": true,
+    "noImplicitAny": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "declaration": true,
+    "moduleResolution": "node",
+    "rootDir": ".",
+    "baseUrl": ".",
+    "paths": {
+      "tikka": ["packages/tikka/src"],
+      "tikka-shared": ["packages/shared/src"],
+      "tikka-transform": ["packages/transform/src"],
+      "tikka-types/*": ["packages/types/*"]
+    }
+  },
+  "include": ["packages/*/src"]
 }

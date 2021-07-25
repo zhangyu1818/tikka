@@ -14,7 +14,9 @@ export const normalizeFormat = (format: BabelTransformOptions['format']) => {
 }
 
 export const mergeOptions = (options: BabelTransformOptions, state: TransformState) => {
-  options.extensions ??= DEFAULT_EXTENSIONS
+  if (!options.extensions) {
+    options.extensions = DEFAULT_EXTENSIONS
+  }
   options.format = normalizeFormat(options.format)
 
   return { ...state, ...options } as Required<BabelTransformOptions> & TransformState

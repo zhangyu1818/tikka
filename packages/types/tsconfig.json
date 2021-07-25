@@ -1,7 +1,0 @@
-{
-  "extends": "../../tsconfig.base.json",
-  "compilerOptions": {
-    "emitDeclarationOnly": true
-  },
-  "include": ["logger.d.ts", "transform.d.ts"]
-}
