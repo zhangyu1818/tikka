@@ -1,0 +1,21 @@
+{
+  "name": "tikka-transform",
+  "version": "0.0.0",
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
+  "scripts": {
+    "build": "tsc"
+  },
+  "dependencies": {
+    "@babel/core": "^7.14.8",
+    "tikka-shared": "workspace:*"
+  },
+  "peerDependencies": {
+    "@babel/preset-env": "*",
+    "@babel/preset-react": "*",
+    "@babel/preset-typescript": "*"
+  },
+  "devDependencies": {
+    "@types/babel__core": "^7.1.15"
+  }
+}

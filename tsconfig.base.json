@@ -3,10 +3,19 @@
     "target": "esnext",
     "module": "commonjs",
     "strict": true,
-    "noImplicitAny": false,
+    "noImplicitAny": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "esModuleInterop": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "declaration": true,
+    "moduleResolution": "node",
+    "baseUrl": "./packages",
+    "paths": {
+      "tikka": ["./tikka/src"],
+      "tikka-shared": ["./shared/src"],
+      "tikka-transform": ["./transform/src"],
+      "tikka-types/*": ["./types/*"]
+    }
   }
 }

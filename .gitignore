@@ -8,3 +8,7 @@
 **/node_modules
 
 .idea
+
+lib
+
+**/types/*.d.ts
