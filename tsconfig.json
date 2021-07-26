@@ -14,6 +14,7 @@
     "baseUrl": ".",
     "paths": {
       "tikka": ["packages/tikka/src"],
+      "tikka-compile": ["packages/compile/src"],
       "tikka-shared": ["packages/shared/src"],
       "tikka-transform": ["packages/transform/src"],
       "tikka-types/*": ["packages/types/*"]

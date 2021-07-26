@@ -5,8 +5,10 @@ import type { Logger } from 'tikka-types/logger'
 // eslint-disable-next-line prefer-destructuring, no-console
 const log = console.log
 
-const print = (prefix: string, color: chalk.Chalk) => (...messages: string[]) =>
-  log(color(chalk.bold(prefix)), ...messages)
+const print =
+  (prefix: string, color: chalk.Chalk) =>
+  (...messages: string[]) =>
+    log(color(chalk.bold(prefix)), ...messages)
 
 const logger: Logger = {
   info: print('ℹ️', chalk.blue),

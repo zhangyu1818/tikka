@@ -1,4 +1,4 @@
-import { compile } from 'tikka'
+import { compile } from 'tikka-compile'
 import path from 'path'
 import { existsSync } from 'fs-extra'
 

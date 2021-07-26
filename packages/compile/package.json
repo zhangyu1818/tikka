@@ -1,5 +1,5 @@
 {
-  "name": "tikka",
+  "name": "tikka-compile",
   "version": "0.0.0-test.0",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
