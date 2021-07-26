@@ -4,7 +4,6 @@ import { replaceExt } from 'tikka-shared'
 
 import type { Transform } from 'tikka-types/transform'
 
-import { DEFAULT_BABEL_CONFIG } from './default'
 import { mergeOptions } from './utils'
 
 import type { BabelTransformOptions, BabelFormat } from './interface'
@@ -18,14 +17,16 @@ const transform: Transform<string, BabelTransformOptions> = (options = {}) => as
     outDir,
     outputFile,
     logger,
-    transformOptions = DEFAULT_BABEL_CONFIG,
+    transformOptions,
   } = mergeOptions(options, state)
 
-  const files = baseFiles.filter((filePath) => extensions.every((ext) => !filePath.endsWith(ext)))
+  const files = baseFiles.filter((filePath) => !extensions.some((ext) => filePath.endsWith(ext)))
 
   logger.info(`transforming ${files.length} files with babel`)
 
-  state.outDir = [...new Set([...outDir, ...Object.values(formatConfig)])]
+  state.outDir = outDir.flatMap((base) =>
+    Object.values(formatConfig).map((dir) => path.join(base, dir))
+  )
 
   // eslint-disable-next-line no-restricted-syntax
   for (const [format, output] of Object.entries(formatConfig)) {

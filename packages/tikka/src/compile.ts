@@ -17,7 +17,7 @@ interface CompileOptions {
 const isTransformFunc = (transform: any): transform is TransformFunc => !transform.transformer
 
 const compile = (options: CompileOptions) => {
-  const { cwd = process.cwd(), source, outDir } = options
+  const { cwd = process.cwd(), source, outDir = '.' } = options
 
   const absoluteSource = path.join(cwd, source)
 
