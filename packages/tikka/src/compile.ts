@@ -6,7 +6,7 @@ import type { Transform, TransformFunc, TransformState } from 'tikka-types/trans
 
 import findFiles from './find-files'
 import logger from './logger'
-import { readFile, outputFile, isExist } from './utils'
+import { readFile, outputFile, remove, isExist } from './utils'
 
 interface CompileOptions {
   cwd?: string
@@ -27,19 +27,20 @@ const compile = (options: CompileOptions) => {
 
   const files: string[] = []
 
-  const transformState = {
+  const transformState: TransformState<string> = {
     cwd,
     source: absoluteSource,
     files,
     readFile,
     outputFile,
+    remove,
     logger,
     outDir: toArray(outDir),
-  } as TransformState
+  }
 
-  const taskQueue: TransformFunc[] = []
+  const taskQueue: TransformFunc<any>[] = []
 
-  const tasks = (...transforms: (Transform | TransformFunc)[]) => {
+  const tasks = (...transforms: (Transform<any> | TransformFunc<any>)[]) => {
     transforms.forEach((transform) => {
       if (isTransformFunc(transform)) {
         taskQueue.push(transform)
@@ -51,7 +52,7 @@ const compile = (options: CompileOptions) => {
     return handler
   }
 
-  const build = async () => {
+  const run = async () => {
     logger.info('searching the files...')
 
     files.push(...findFiles({ source: absoluteSource }))
@@ -68,7 +69,9 @@ const compile = (options: CompileOptions) => {
     }
   }
 
-  const handler = { tasks, build }
+  logger.success('all tasks running success')
+
+  const handler = { tasks, run }
 
   return { tasks }
 }

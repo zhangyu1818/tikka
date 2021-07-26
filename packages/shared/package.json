@@ -4,6 +4,6 @@
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
   "scripts": {
-    "build": "tsc"
+    "build": "lib-tool --entry src --format cjs --outDir lib"
   }
 }

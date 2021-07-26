@@ -8,7 +8,7 @@ import { mergeOptions } from './utils'
 
 import type { BabelTransformOptions, BabelFormat } from './interface'
 
-const transform: Transform<string, BabelTransformOptions> = (options = {}) => async (state) => {
+const transform: Transform<BabelTransformOptions, string> = (options = {}) => async (state) => {
   const {
     source,
     files: baseFiles,
@@ -16,6 +16,7 @@ const transform: Transform<string, BabelTransformOptions> = (options = {}) => as
     format: formatConfig,
     outDir,
     outputFile,
+    remove,
     logger,
     transformOptions,
   } = mergeOptions(options, state)
@@ -31,6 +32,9 @@ const transform: Transform<string, BabelTransformOptions> = (options = {}) => as
   // eslint-disable-next-line no-restricted-syntax
   for (const [format, output] of Object.entries(formatConfig)) {
     logger.info(`start to transform ${format}`)
+
+    await remove(output)
+    logger.success(`clean folder ${output}`)
 
     // eslint-disable-next-line no-restricted-syntax
     for (const filePath of files) {

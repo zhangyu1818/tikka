@@ -19,5 +19,5 @@
       "tikka-types/*": ["packages/types/*"]
     }
   },
-  "include": ["packages/*/src"]
+  "include": ["packages/*/src", "packages/*/__test__"]
 }

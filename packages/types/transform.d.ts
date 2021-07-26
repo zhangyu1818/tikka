@@ -1,12 +1,9 @@
 import type { Logger } from './logger'
 
-export interface TransformOptions<T = any> {
-  extensions?: string[]
-  readFile?: (filePath: string) => T | Promise<T>
-  outputFile?: (outputPath: string, data: T) => void | Promise<void>
-}
-
-export interface TransformState<T = any> extends Required<TransformOptions<T>> {
+export interface TransformState<T = unknown> {
+  readFile: (filePath: string) => Promise<T>
+  outputFile: (outputPath: string, data: T) => Promise<void>
+  remove: (path: string) => Promise<void>
   cwd: string
   source: string
   files: string[]
@@ -14,9 +11,9 @@ export interface TransformState<T = any> extends Required<TransformOptions<T>> {
   outDir: string[]
 }
 
-export type TransformFunc<T = any> = (state: TransformState<T>) => void | Promise<void>
+export type TransformFunc<T = unknown> = (state: TransformState<T>) => void | Promise<void>
 
-export interface Transform<T = any, U extends TransformOptions<T> = TransformOptions<T>> {
-  (options?: U): TransformFunc<T>
+export interface Transform<T = unknown, U = unknown> {
+  (options?: T): TransformFunc<U>
   transformer: boolean
 }

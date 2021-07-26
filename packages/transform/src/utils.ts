@@ -13,7 +13,7 @@ export const normalizeFormat = (format: BabelTransformOptions['format']) => {
   return format ?? DEFAULT_FORMAT
 }
 
-export const mergeOptions = (options: BabelTransformOptions, state: TransformState) => {
+export const mergeOptions = (options: BabelTransformOptions, state: TransformState<string>) => {
   options.extensions ??= DEFAULT_EXTENSIONS
   options.transformOptions ??= DEFAULT_BABEL_CONFIG
   options.format = normalizeFormat(options.format)

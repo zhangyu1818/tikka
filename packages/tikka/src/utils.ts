@@ -6,3 +6,5 @@ export const readFile = (filePath: string) => fs.readFile(filePath, 'utf-8')
 
 export const outputFile = (outputPath: string, data: string) =>
   fs.outputFile(outputPath, data, 'utf-8')
+
+export const remove = (path: string) => fs.remove(path)
