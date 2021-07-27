@@ -16,6 +16,7 @@
     "@babel/preset-typescript": "*"
   },
   "devDependencies": {
+    "@babel/preset-flow": "^7.14.5",
     "@types/babel__core": "^7.1.15"
   }
 }

@@ -11,4 +11,7 @@
 
 lib
 
+**/fixtures/**/dist
+!**/fixtures/**/lib
+
 coverage

@@ -3,8 +3,8 @@ import type { TransformOptions as BabelBasicTransformOptions } from '@babel/core
 export type BabelFormat = 'commonjs' | 'module'
 
 export interface BabelTransformOptions {
-  extensions?: string[]
-  format?: BabelFormat | Partial<Record<BabelFormat, string>>
+  test?: RegExp
+  format?: BabelFormat | Partial<Record<BabelFormat, string>> | BabelFormat[]
   transformOptions?:
     | BabelBasicTransformOptions
     | ((format: BabelFormat, filePath: string) => BabelBasicTransformOptions)

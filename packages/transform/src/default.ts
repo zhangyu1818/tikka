@@ -1,15 +1,18 @@
+import type { TransformOptions } from '@babel/core'
 import type { BabelFormat } from './interface'
 
-export const DEFAULT_EXTENSIONS = ['.js', '.jsx', '.ts', '.tsx']
+export const DEFAULT_TEST = /\.(js|jsx|ts|tsx)$/
 
 export const DEFAULT_FORMAT = {
   commonjs: 'lib',
   module: 'es',
 } as const
 
-export const DEFAULT_BABEL_CONFIG = (format: BabelFormat, filePath: string) => {
+export const DEFAULT_BABEL_CONFIG = (format: BabelFormat, filePath: string): TransformOptions => {
   const isTSX = filePath.endsWith('.tsx')
   return {
+    babelrc: false,
+    configFile: false,
     presets: [
       [
         require.resolve('@babel/preset-typescript'),
@@ -29,5 +32,6 @@ export const DEFAULT_BABEL_CONFIG = (format: BabelFormat, filePath: string) => {
         },
       ],
     ],
+    sourceType: 'unambiguous',
   }
 }

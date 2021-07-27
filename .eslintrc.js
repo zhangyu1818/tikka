@@ -1,7 +1,7 @@
 module.exports = {
   parser: '@typescript-eslint/parser',
   extends: ['airbnb-typescript/base', 'prettier'],
-  ignorePatterns: ['.eslintrc.js'],
+  ignorePatterns: ['.eslintrc.js', 'fixtures'],
   env: {
     es6: true,
     node: true,
@@ -15,5 +15,6 @@ module.exports = {
     'no-param-reassign': 'off',
     'no-await-in-loop': 'off',
     '@typescript-eslint/no-shadow': 'off',
+    'no-plusplus': 'off',
   },
 }

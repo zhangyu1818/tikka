@@ -13,7 +13,7 @@ export interface TransformState<T = unknown> {
 
 export type TransformFunc<T = unknown> = (state: TransformState<T>) => void | Promise<void>
 
-export interface Transform<T = unknown, U = unknown> {
+export interface Transform<T = unknown, U = any> {
   (options?: T): TransformFunc<U>
   transformer: boolean
 }

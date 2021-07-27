@@ -14,7 +14,7 @@ emptyTransform.transformer = true
 
 const cwd = path.join(__dirname, '..')
 
-describe('tikka', () => {
+describe('tikka compile', () => {
   it('should be able to search all files', async () => {
     await compile({ cwd, source: '__test__' })
       .tasks(

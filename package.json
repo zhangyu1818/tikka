@@ -21,6 +21,8 @@
   },
   "scripts": {
     "build:packages": "yarn workspaces foreach run build",
+    "lint:script": "eslint packages/**/src/*.ts",
+    "lint:fix": "yarn run lint:script --fix",
     "tsc:check": "tsc --noEmit",
     "test": "jest",
     "postinstall": "husky install"
