@@ -1,9 +1,7 @@
-'use strict'
+"use strict";
 
-var _b = _interopRequireDefault(require('./b'))
+var _b = _interopRequireDefault(require("./b"));
 
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : { default: obj }
-}
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-console.log(_b.default)
+console.log(_b.default);

@@ -1,11 +1,10 @@
 import path from 'path'
 
-import { toArray } from 'tikka-shared'
+import { toArray, logger } from 'tikka-shared'
 
 import type { Transform, TransformFunc, TransformState } from 'tikka-types/transform'
 
 import findFiles from './find-files'
-import logger from './logger'
 import { readFile, outputFile, remove, isExist } from './utils'
 
 interface CompileOptions {

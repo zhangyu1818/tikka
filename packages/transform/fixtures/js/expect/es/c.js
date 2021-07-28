@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 export default (function () {
-  return /*#__PURE__*/ React.createElement('div', null)
-})
+  return /*#__PURE__*/React.createElement("div", null);
+});

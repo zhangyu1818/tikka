@@ -5,5 +5,8 @@
   "types": "./lib/index.d.ts",
   "scripts": {
     "build": "lib-tool --entry src --format cjs --outDir lib"
+  },
+  "dependencies": {
+    "chalk": "^4.1.1"
   }
 }

@@ -7,7 +7,6 @@
     "build": "lib-tool --entry src --format cjs --outDir lib"
   },
   "dependencies": {
-    "chalk": "^4.1.1",
     "fs-extra": "^10.0.0",
     "glob": "^7.1.7",
     "tikka-shared": "workspace:*",
