@@ -1,16 +1,16 @@
 {
-  "name": "tikka-shared",
+  "name": "tikka",
   "version": "0.0.0-test.0",
+  "bin": "./lib/cli.js",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
   "scripts": {
     "build": "lib-tool --entry src --format cjs --outDir lib"
   },
   "dependencies": {
-    "chalk": "^4.1.1"
-  },
-  "peerDependencies": {
-    "fs-extra": "*",
-    "glob": "*"
+    "tikka-compile": "workspace:*",
+    "tikka-shared": "workspace:*",
+    "tikka-transform": "workspace:*",
+    "yargs-parser": "^20.2.9"
   }
 }

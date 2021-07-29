@@ -1779,15 +1779,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/cross-spawn@npm:^6.0.2":
-  version: 6.0.2
-  resolution: "@types/cross-spawn@npm:6.0.2"
-  dependencies:
-    "@types/node": "*"
-  checksum: b083a3f946a47c53c3326aaaa71b84413cec4e51344f360f24eb7783ee387221f5295905629ae2de260d83a83e847c1e806ace79944038124c64365a487c7135
-  languageName: node
-  linkType: hard
-
 "@types/fs-extra@npm:^9.0.12":
   version: 9.0.12
   resolution: "@types/fs-extra@npm:9.0.12"
@@ -6737,11 +6728,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "root-workspace-0b6124@workspace:."
   dependencies:
-    "@types/cross-spawn": ^6.0.2
     "@types/jest": ^26.0.24
     "@typescript-eslint/eslint-plugin": ^4.28.4
     "@typescript-eslint/parser": ^4.28.4
-    cross-spawn: ^7.0.3
     eslint: ^7.31.0
     eslint-config-airbnb-typescript: ^12.3.1
     eslint-config-prettier: ^8.3.0
@@ -7350,6 +7339,9 @@ __metadata:
   resolution: "tikka-shared@workspace:packages/shared"
   dependencies:
     chalk: ^4.1.1
+  peerDependencies:
+    fs-extra: "*"
+    glob: "*"
   languageName: unknown
   linkType: soft
 
@@ -7382,6 +7374,8 @@ __metadata:
     tikka-shared: "workspace:*"
     tikka-transform: "workspace:*"
     yargs-parser: ^20.2.9
+  bin:
+    tikka: ./lib/cli.js
   languageName: unknown
   linkType: soft
 
