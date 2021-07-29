@@ -4,7 +4,7 @@
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
   "scripts": {
-    "build": "lib-tool --entry src --format cjs --outDir lib"
+    "build": "cjsb"
   },
   "dependencies": {
     "chalk": "^4.1.1"

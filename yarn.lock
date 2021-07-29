@@ -1198,7 +1198,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/preset-env@npm:^7.14.7":
+"@babel/preset-env@npm:^7.14.7, @babel/preset-env@npm:^7.14.8":
   version: 7.14.8
   resolution: "@babel/preset-env@npm:7.14.8"
   dependencies:
@@ -2670,6 +2670,22 @@ __metadata:
   version: 1.2.2
   resolution: "cjs-module-lexer@npm:1.2.2"
   checksum: 0460b5ad6b759bb6fba0f36be2be8459ffebf7f7aa0868981732486528b4d78e33138e530cc9e728fbec3d76e59036a9bfca0dc7af59958007bd49e8f525c673
+  languageName: node
+  linkType: hard
+
+"cjsb@npm:latest":
+  version: 0.0.2
+  resolution: "cjsb@npm:0.0.2"
+  dependencies:
+    "@babel/core": ^7.14.8
+    "@babel/preset-env": ^7.14.8
+    "@babel/preset-typescript": ^7.14.5
+    fs-extra: ^10.0.0
+    glob: ^7.1.7
+    yargs-parser: ^20.2.9
+  bin:
+    cjsb: cli.js
+  checksum: 8659e5c3ade54428812d33005f1094d6a561f685ec852bcebc6097070198c8bcd590bad0545321fbc3c3f3d705034c7c39edfb67fd84f8fe3aef0cb93f9bb413
   languageName: node
   linkType: hard
 
@@ -6731,6 +6747,7 @@ __metadata:
     "@types/jest": ^26.0.24
     "@typescript-eslint/eslint-plugin": ^4.28.4
     "@typescript-eslint/parser": ^4.28.4
+    cjsb: latest
     eslint: ^7.31.0
     eslint-config-airbnb-typescript: ^12.3.1
     eslint-config-prettier: ^8.3.0
