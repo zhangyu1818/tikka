@@ -4,7 +4,7 @@
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
   "scripts": {
-    "build": "cjsb"
+    "build": "cjsb -d"
   },
   "dependencies": {
     "fs-extra": "^10.0.0",

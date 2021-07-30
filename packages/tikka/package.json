@@ -5,7 +5,7 @@
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
   "scripts": {
-    "build": "cjsb"
+    "build": "cjsb -d"
   },
   "dependencies": {
     "tikka-compile": "workspace:*",
