@@ -3,9 +3,9 @@ import parser from 'yargs-parser'
 import { existsSync } from 'fs-extra'
 import { logger } from 'tikka-shared'
 
-import type { BabelFormat } from 'tikka-transform/src/interface'
-
 import build from './index'
+
+import type { BabelFormat } from './index'
 
 type Args = {
   cwd?: string

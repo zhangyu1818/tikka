@@ -1,7 +1,7 @@
 import { compile } from 'tikka-compile'
 import { transform } from 'tikka-transform'
 
-import type { BabelFormat } from 'tikka-transform/src/interface'
+export type BabelFormat = 'commonjs' | 'module'
 
 export type Options = {
   cwd: string
