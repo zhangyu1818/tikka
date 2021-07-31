@@ -66,9 +66,9 @@ const compile = (options: CompileOptions) => {
       const transform = queue.shift()
       await transform!(transformState)
     }
-  }
 
-  logger.success('all tasks running success')
+    logger.success('all tasks running success')
+  }
 
   const handler = { tasks, run }
 

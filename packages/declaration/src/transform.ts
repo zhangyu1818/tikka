@@ -31,14 +31,16 @@ const transform: Transform<TransformOptions> = (options = {}) => async (state) =
   configOptions.compilerOptions = { ...configOptions.compilerOptions, ...compilerOptions }
   configOptions.include = [source]
 
-  logger.info('writing declaration files...')
-
   // eslint-disable-next-line no-restricted-syntax
   for (const outDir of ourDirs) {
     try {
       configOptions.compilerOptions.outDir = outDir
+
+      logger.info(`writing declaration files to ${outDir}...`)
+
       await outputFile(tscNeedPath, JSON.stringify(configOptions))
       execSync('tsc', { stdio: 'inherit', cwd })
+
       logger.success('transform declaration success')
     } catch (e) {
       logger.error(e.message)
