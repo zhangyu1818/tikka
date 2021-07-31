@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 /* eslint-disable global-require,no-console */
 import parser from 'yargs-parser'
 import { existsSync } from 'fs-extra'

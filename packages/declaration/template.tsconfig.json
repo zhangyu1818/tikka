@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "emitDeclarationOnly": true,
+    "declaration": true,
+    "noEmit": false,
+    "module": "esnext",
+    "target": "esnext",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "jsx": "react"
+  }
+}

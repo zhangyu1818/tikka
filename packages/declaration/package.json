@@ -1,0 +1,10 @@
+{
+  "name": "tikka-declaration",
+  "version": "0.0.0-test.1",
+  "devDependencies": {
+    "tikka-shared": "workspace:*"
+  },
+  "peerDependencies": {
+    "typescript": "*"
+  }
+}

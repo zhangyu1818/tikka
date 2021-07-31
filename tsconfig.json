@@ -17,6 +17,7 @@
       "tikka-compile": ["packages/compile/src"],
       "tikka-shared": ["packages/shared/src"],
       "tikka-transform": ["packages/transform/src"],
+      "tikka-declaration": ["packages/declaration/src"],
       "tikka-types/*": ["packages/types/*"]
     }
   },

@@ -7,6 +7,7 @@ module.exports = {
     'tikka-compile$': '<rootDir>/packages/./compile/src',
     'tikka-shared$': '<rootDir>/packages/./shared/src',
     'tikka-transform$': '<rootDir>/packages/./transform/src',
+    'tikka-declaration$': '<rootDir>/packages/./declaration/src',
     'tikka-types/(.*)$': '<rootDir>/packages/./types/$1',
   },
 }
