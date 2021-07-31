@@ -16,12 +16,14 @@ type Args = {
   source?: string
   version?: boolean
   babelrc?: string
+  declaration?: boolean
 }
 
 const argv = parser(process.argv.slice(2), {
   array: ['format', 'outDir'],
   alias: {
     version: ['v'],
+    declaration: ['d'],
   },
   configuration: {
     'camel-case-expansion': false,
@@ -57,8 +59,8 @@ if (!argv.cwd) {
   argv.cwd = process.cwd()
 }
 
-const { cwd, source, format, babelrc } = argv as Required<Args>
+const { cwd, source, format, babelrc, declaration } = argv as Required<Args>
 
-build({ cwd, source, format, babelrc }).catch((e) => {
+build({ cwd, source, format, babelrc, declaration }).catch((e) => {
   logger.exit(e.message)
 })

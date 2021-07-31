@@ -1,6 +1,11 @@
 {
   "name": "tikka-declaration",
-  "version": "0.0.0-test.1",
+  "version": "0.0.0-test.2",
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
+  "scripts": {
+    "build": "cjsb -d"
+  },
   "devDependencies": {
     "tikka-shared": "workspace:*"
   },

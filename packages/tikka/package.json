@@ -1,6 +1,6 @@
 {
   "name": "tikka",
-  "version": "0.0.0-test.1",
+  "version": "0.0.0-test.2",
   "bin": "./lib/cli.js",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
@@ -11,6 +11,7 @@
     "tikka-compile": "workspace:*",
     "tikka-shared": "workspace:*",
     "tikka-transform": "workspace:*",
+    "tikka-declaration": "workspace:*",
     "yargs-parser": "^20.2.9"
   }
 }
