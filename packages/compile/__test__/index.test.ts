@@ -22,7 +22,7 @@ describe('tikka compile', () => {
           cb: (state) => {
             expect(state.cwd).toBe(cwd)
             expect(state.source).toBe(path.join(cwd, '__test__'))
-            expect(state.outDir).toEqual(['.'])
+            expect(state.rootDir).toEqual('.')
             expect(state.files.length).toBe(1)
             expect(state.readFile).toBeDefined()
             expect(state.outputFile).toBeDefined()

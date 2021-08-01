@@ -1,6 +1,6 @@
 import path from 'path'
 
-import { toArray, logger } from 'tikka-shared'
+import { logger } from 'tikka-shared'
 
 import type { Transform, TransformFunc, TransformState } from 'tikka-types/transform'
 
@@ -10,13 +10,13 @@ import { readFile, outputFile, remove, isExist } from './utils'
 interface CompileOptions {
   cwd?: string
   source: string
-  outDir?: string
+  rootDir?: string
 }
 
 const isTransformFunc = (transform: any): transform is TransformFunc => !transform.transformer
 
 const compile = (options: CompileOptions) => {
-  const { cwd = process.cwd(), source, outDir = '.' } = options
+  const { cwd = process.cwd(), source, rootDir = '.' } = options
 
   const absoluteSource = path.join(cwd, source)
 
@@ -34,7 +34,7 @@ const compile = (options: CompileOptions) => {
     outputFile,
     remove,
     logger,
-    outDir: toArray(outDir),
+    rootDir,
   }
 
   const taskQueue: TransformFunc<any>[] = []

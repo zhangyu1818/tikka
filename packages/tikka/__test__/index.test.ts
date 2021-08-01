@@ -10,7 +10,7 @@ describe('tikka cli', () => {
     await build({
       cwd,
       source: 'files',
-      outDir: 'dist',
+      rootDir: 'dist',
       format: {
         commonjs: 'lib',
         module: 'es',

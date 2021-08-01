@@ -4,55 +4,62 @@ import { execSync } from 'child_process'
 import { Transform } from 'tikka-types/transform'
 
 interface TransformOptions {
+  outDir?: string | string[]
   configFile?: string
   compilerOptions?: Record<string, any>
 }
 
 const templateConfigPath = path.resolve(__dirname, '..', 'template.tsconfig.json')
 
-const transform: Transform<TransformOptions> = (options = {}) => async (state) => {
-  const { configFile = 'tsconfig.json', compilerOptions } = options
+const transform: Transform<TransformOptions> =
+  (options = {}) =>
+  async (state) => {
+    const { outDir = '', configFile = 'tsconfig.json', compilerOptions } = options
 
-  const { cwd, source, readFile, outputFile, logger, remove, outDir: ourDirs } = state
+    const { cwd, source, readFile, outputFile, logger, remove, rootDir } = state
 
-  let tsconfigPath = path.join(cwd, configFile)
+    const outDirs = Array.isArray(outDir)
+      ? outDir.map((dir) => path.join(rootDir, dir))
+      : [path.join(rootDir, outDir)]
 
-  const tscNeedPath = path.join(cwd, 'tsconfig.json')
+    let tsconfigPath = path.join(cwd, configFile)
 
-  if (!existsSync(tsconfigPath)) {
-    logger.info('tsconfig file does not exist, use default template tsconfig.json.')
-    tsconfigPath = templateConfigPath
-  }
+    const tscNeedPath = path.join(cwd, 'tsconfig.json')
 
-  const originalContent = existsSync(tscNeedPath) && (await readFile(tscNeedPath))
+    if (!existsSync(tsconfigPath)) {
+      logger.info('tsconfig file does not exist, use default template tsconfig.json.')
+      tsconfigPath = templateConfigPath
+    }
 
-  // eslint-disable-next-line global-require,import/no-dynamic-require
-  const configOptions = require(tsconfigPath)
-  configOptions.compilerOptions = { ...configOptions.compilerOptions, ...compilerOptions }
-  configOptions.include = [source]
+    const originalContent = existsSync(tscNeedPath) && (await readFile(tscNeedPath))
 
-  // eslint-disable-next-line no-restricted-syntax
-  for (const outDir of ourDirs) {
-    try {
-      configOptions.compilerOptions.outDir = outDir
+    // eslint-disable-next-line global-require,import/no-dynamic-require
+    const configOptions = require(tsconfigPath)
+    configOptions.compilerOptions = { ...configOptions.compilerOptions, ...compilerOptions }
+    configOptions.include = [source]
 
-      logger.info(`writing declaration files to ${outDir}...`)
+    // eslint-disable-next-line no-restricted-syntax
+    for (const outDir of outDirs) {
+      try {
+        configOptions.compilerOptions.outDir = outDir
 
-      await outputFile(tscNeedPath, JSON.stringify(configOptions))
-      execSync('tsc', { stdio: 'inherit', cwd })
+        logger.info(`writing declaration files to ${outDir}...`)
 
-      logger.success('transform declaration success')
-    } catch (e) {
-      logger.error(e.message)
-    } finally {
-      if (originalContent) {
-        await outputFile(tscNeedPath, originalContent)
-      } else {
-        await remove(tscNeedPath)
+        await outputFile(tscNeedPath, JSON.stringify(configOptions))
+        execSync('tsc', { stdio: 'inherit', cwd })
+
+        logger.success('transform declaration success')
+      } catch (e) {
+        logger.error(e.message)
+      } finally {
+        if (originalContent) {
+          await outputFile(tscNeedPath, originalContent)
+        } else {
+          await remove(tscNeedPath)
+        }
       }
     }
   }
-}
 
 transform.transformer = true
 

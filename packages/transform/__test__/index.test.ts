@@ -13,7 +13,7 @@ describe('tikka-transform', () => {
     await compile({
       cwd,
       source: 'files',
-      outDir: 'dist',
+      rootDir: 'dist',
     })
       .tasks(
         transform({
@@ -29,7 +29,7 @@ describe('tikka-transform', () => {
     await compile({
       cwd,
       source: 'files',
-      outDir: 'dist',
+      rootDir: 'dist',
     })
       .tasks(
         transform({
@@ -45,7 +45,7 @@ describe('tikka-transform', () => {
     await compile({
       cwd,
       source: 'files',
-      outDir: 'dist',
+      rootDir: 'dist',
     })
       .tasks(
         transform({

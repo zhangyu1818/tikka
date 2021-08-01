@@ -8,12 +8,14 @@ export interface TransformState<T = unknown> {
   source: string
   files: string[]
   logger: Logger
-  outDir: string[]
+  rootDir: string
+  // [key: string]: any
 }
 
 export type TransformFunc<T = unknown> = (state: TransformState<T>) => void | Promise<void>
 
 export interface Transform<T = unknown, U = any> {
-  (options?: T): TransformFunc<U>
   transformer: boolean
+
+  (options?: T): TransformFunc<U>
 }

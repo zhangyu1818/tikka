@@ -27,8 +27,6 @@ const transform: Transform<BabelTransformOptions> =
 
     logger.info(`transforming ${files.length} files with babel`)
 
-    state.outDir = Object.values(formats)
-
     // eslint-disable-next-line no-restricted-syntax
     for (const [format, output] of Object.entries(formats)) {
       logger.info(`start to transform ${format}`)
