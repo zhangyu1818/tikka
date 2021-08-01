@@ -6,7 +6,7 @@ export type BabelFormat = 'commonjs' | 'module'
 
 export type Options = {
   cwd: string
-  format?: BabelFormat[] | Record<BabelFormat, string>
+  format?: Record<BabelFormat, string>
   rootDir?: string
   source: string
   babelrc?: string
@@ -14,7 +14,7 @@ export type Options = {
 }
 
 const build = (options: Options) => {
-  const { cwd, format, rootDir, source, babelrc, declaration } = options
+  const { cwd, format, source, rootDir, babelrc, declaration } = options
   const transforms: any[] = [
     transform({
       format,
@@ -24,7 +24,7 @@ const build = (options: Options) => {
           }
         : undefined,
     }),
-    declaration && transformDeclaration,
+    declaration && transformDeclaration({ outDir: format && Object.keys(format) }),
   ].filter(Boolean)
   return compile({
     cwd,
@@ -35,6 +35,6 @@ const build = (options: Options) => {
     .run()
 }
 
-export { compile, transform }
+export { compile, transform, transformDeclaration }
 
 export default build

@@ -59,7 +59,11 @@ if (!argv.cwd) {
   argv.cwd = process.cwd()
 }
 
-const { cwd, source, format, babelrc, declaration } = argv as Required<Args>
+const { cwd, source, format, babelrc, declaration } = (argv as unknown) as Required<
+  Omit<Args, 'format'> & {
+    format: Record<BabelFormat, string>
+  }
+>
 
 build({ cwd, source, format, babelrc, declaration }).catch((e) => {
   logger.exit(e.message)

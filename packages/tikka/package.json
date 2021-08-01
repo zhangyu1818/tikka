@@ -9,9 +9,9 @@
   },
   "dependencies": {
     "tikka-compile": "workspace:*",
+    "tikka-declaration": "workspace:*",
     "tikka-shared": "workspace:*",
     "tikka-transform": "workspace:*",
-    "tikka-declaration": "workspace:*",
     "yargs-parser": "^20.2.9"
   }
 }
