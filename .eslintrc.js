@@ -10,6 +10,7 @@ module.exports = {
     project: ['./tsconfig.json', './packages/*/tsconfig.json'],
   },
   rules: {
+    'no-continue': 'off',
     'import/prefer-default-export': 'off',
     'import/no-extraneous-dependencies': 'off',
     'no-param-reassign': 'off',

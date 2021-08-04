@@ -10,13 +10,13 @@ import { readFile, outputFile, remove, isExist } from './utils'
 interface CompileOptions {
   cwd?: string
   source: string
-  rootDir?: string
+  outDir?: string
 }
 
 const isTransformFunc = (transform: any): transform is TransformFunc => !transform.transformer
 
 const compile = (options: CompileOptions) => {
-  const { cwd = process.cwd(), source, rootDir = '.' } = options
+  const { cwd = process.cwd(), source, outDir = '.' } = options
 
   const absoluteSource = path.join(cwd, source)
 
@@ -26,15 +26,18 @@ const compile = (options: CompileOptions) => {
 
   const files: string[] = []
 
-  const transformState: TransformState<string> = {
+  const root = path.join(cwd, outDir)
+
+  const transformState: TransformState = {
     cwd,
     source: absoluteSource,
     files,
     readFile,
-    outputFile,
+    outputFile: outputFile(root),
+    relativePath: (filePath) => path.relative(absoluteSource, filePath),
     remove,
     logger,
-    rootDir,
+    outDir,
   }
 
   const taskQueue: TransformFunc<any>[] = []
@@ -52,6 +55,13 @@ const compile = (options: CompileOptions) => {
   }
 
   const run = async () => {
+    if (outDir === '.') {
+      logger.warn(`outDir is root(.), skip outDir remove`)
+    } else {
+      logger.info(`clear folder ${outDir}...`)
+      await remove(outDir)
+    }
+
     logger.info('searching the files...')
 
     files.push(...findFiles({ source: absoluteSource }))

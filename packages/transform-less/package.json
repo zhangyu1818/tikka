@@ -1,0 +1,10 @@
+{
+  "name": "tikka-transform-less",
+  "dependencies": {
+    "less": "^4.1.1",
+    "tikka-shared": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/less": "^3.0.3"
+  }
+}

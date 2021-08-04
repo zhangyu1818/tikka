@@ -22,8 +22,9 @@ describe('tikka compile', () => {
           cb: (state) => {
             expect(state.cwd).toBe(cwd)
             expect(state.source).toBe(path.join(cwd, '__test__'))
-            expect(state.rootDir).toEqual('.')
+            expect(state.outDir).toEqual('.')
             expect(state.files.length).toBe(1)
+            expect(state.relativePath).toBeDefined()
             expect(state.readFile).toBeDefined()
             expect(state.outputFile).toBeDefined()
             expect(state.remove).toBeDefined()
@@ -50,7 +51,7 @@ describe('tikka compile', () => {
         emptyTransform({
           cb: async (state) => {
             const outputPath = path.join(cwd, '__test__/temp-file')
-            await state.outputFile(outputPath, 'temp file')
+            await state.outputFile('__test__/temp-file', 'temp file')
             const content = await state.readFile(outputPath)
             expect(content).toBe('temp file')
             await state.remove(outputPath)

@@ -29,7 +29,7 @@ const build = (options: Options) => {
   return compile({
     cwd,
     source,
-    rootDir,
+    outDir: rootDir,
   })
     .tasks(...transforms)
     .run()
