@@ -2,6 +2,7 @@
 module.exports = {
   preset: 'ts-jest',
   testEnvironment: 'node',
+  setupFiles: ['./jest-setup.js'],
   moduleNameMapper: {
     tikka$: '<rootDir>/packages/./tikka/src',
     'tikka-compile$': '<rootDir>/packages/./compile/src',

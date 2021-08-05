@@ -1,6 +1,7 @@
 import { compile } from 'tikka-compile'
 import { transform } from 'tikka-transform'
 import { transformDeclaration } from 'tikka-declaration'
+import { transformLess } from 'tikka-transform-less'
 
 export type BabelFormat = 'commonjs' | 'module'
 
@@ -15,6 +16,9 @@ export type Options = {
 
 const build = (options: Options) => {
   const { cwd, format, source, rootDir, babelrc, declaration } = options
+
+  const outDir = format && Object.keys(format)
+
   const transforms: any[] = [
     transform({
       format,
@@ -24,7 +28,8 @@ const build = (options: Options) => {
           }
         : undefined,
     }),
-    declaration && transformDeclaration({ outDir: format && Object.keys(format) }),
+    declaration && transformDeclaration({ outDir }),
+    transformLess({ outDir }),
   ].filter(Boolean)
   return compile({
     cwd,

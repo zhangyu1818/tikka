@@ -11,9 +11,60 @@ describe('transformLess', () => {
     await compile({
       cwd,
       source: 'files',
-      outDir: 'dist',
+      outDir: 'expect',
     })
       .tasks(transformLess)
+      .run()
+
+    testFilesExpect(cwd)
+  })
+
+  it('should be exclude files', async () => {
+    const cwd = path.join(root, 'exclude')
+    await compile({
+      cwd,
+      source: 'files',
+      outDir: 'dist',
+    })
+      .tasks(
+        transformLess({
+          exclude: /\.exclude.less$/,
+        })
+      )
+      .run()
+
+    testFilesExpect(cwd)
+  })
+
+  it('should be support inject data', async () => {
+    const cwd = path.join(root, 'inject')
+    await compile({
+      cwd,
+      source: 'files',
+      outDir: 'dist',
+    })
+      .tasks(
+        transformLess({
+          inject: ['@import "./theme";'],
+        })
+      )
+      .run()
+
+    testFilesExpect(cwd)
+  })
+
+  it('should be support outDir', async () => {
+    const cwd = path.join(root, 'outDir')
+    await compile({
+      cwd,
+      source: 'files',
+      outDir: 'dist',
+    })
+      .tasks(
+        transformLess({
+          outDir: 'output',
+        })
+      )
       .run()
 
     testFilesExpect(cwd)

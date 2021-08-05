@@ -1,5 +1,11 @@
 {
   "name": "tikka-transform-less",
+  "version": "0.0.0-test.2",
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
+  "scripts": {
+    "build": "cjsb -d"
+  },
   "dependencies": {
     "less": "^4.1.1",
     "tikka-shared": "workspace:*"

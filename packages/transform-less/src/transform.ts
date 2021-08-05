@@ -6,7 +6,7 @@ import { Transform } from 'tikka-types/transform'
 export interface LessTransformOptions {
   test?: RegExp
   exclude?: RegExp
-  outputDir?: string | string[]
+  outDir?: string | string[]
   inject?: string[]
   filterEmptyOutput?: boolean
   lessOptions?: Less.Options
@@ -15,14 +15,14 @@ export interface LessTransformOptions {
 const transformLess: Transform<LessTransformOptions> = (options = {}) => async (state) => {
   const {
     test = /\.less$/,
-    outputDir = '',
+    outDir = '',
     filterEmptyOutput = true,
     exclude,
     inject,
     lessOptions,
   } = options
 
-  const { files, readFile, outputFile, relativePath, logger } = state
+  const { files, readFile, outDir: rootOutDir, outputFile, relativePath, logger } = state
 
   const lessFiles = files.filter((filePath) =>
     exclude ? test.test(filePath) && !exclude.test(filePath) : test.test(filePath)
@@ -30,11 +30,11 @@ const transformLess: Transform<LessTransformOptions> = (options = {}) => async (
 
   logger.info(`transform ${lessFiles.length} files with less compiler`)
 
-  const outputDirs = toArray(outputDir)
+  const outputDirs = toArray(outDir)
 
   // eslint-disable-next-line no-restricted-syntax
   for (const outputDir of outputDirs) {
-    logger.info(`output less files to ${outputDir}`)
+    logger.info(`output less files to ${outputDir || rootOutDir}`)
     // eslint-disable-next-line no-restricted-syntax
     for (const filePath of lessFiles) {
       const { name: filename, base: fileBaseName, dir: fileDir } = path.parse(filePath)
@@ -57,8 +57,7 @@ const transformLess: Transform<LessTransformOptions> = (options = {}) => async (
       }
 
       const outputPath = path.format({
-        root: outputDir,
-        dir: relativePath(fileDir),
+        dir: path.join(outputDir, relativePath(fileDir)),
         name: filename,
         ext: '.css',
       })

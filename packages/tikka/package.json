@@ -12,6 +12,7 @@
     "tikka-declaration": "workspace:*",
     "tikka-shared": "workspace:*",
     "tikka-transform": "workspace:*",
+    "tikka-transform-less": "workspace:*",
     "yargs-parser": "^20.2.9"
   }
 }
