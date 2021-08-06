@@ -1,0 +1,14 @@
+{
+  "name": "tikka-transform-sass",
+  "version": "0.0.0-test.2",
+  "scripts": {
+    "build": "cjsb -d"
+  },
+  "dependencies": {
+    "sass": "^1.37.5",
+    "tikka-shared": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/sass": "^1.16.1"
+  }
+}

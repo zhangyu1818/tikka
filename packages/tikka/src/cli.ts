@@ -59,7 +59,7 @@ if (!argv.cwd) {
   argv.cwd = process.cwd()
 }
 
-const { cwd, source, format, babelrc, declaration } = (argv as unknown) as Required<
+const { cwd, source, format, babelrc, declaration } = argv as unknown as Required<
   Omit<Args, 'format'> & {
     format: Record<BabelFormat, string>
   }

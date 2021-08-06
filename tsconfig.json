@@ -18,6 +18,7 @@
       "tikka-shared": ["packages/shared/src"],
       "tikka-transform": ["packages/transform/src"],
       "tikka-transform-less": ["packages/transform-less/src"],
+      "tikka-transform-sass": ["packages/transform-sass/src"],
       "tikka-declaration": ["packages/declaration/src"],
       "tikka-types/*": ["packages/types/*"]
     }

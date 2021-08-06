@@ -11,7 +11,7 @@ describe('transformLess', () => {
     await compile({
       cwd,
       source: 'files',
-      outDir: 'expect',
+      outDir: 'dist',
     })
       .tasks(transformLess)
       .run()
