@@ -4,9 +4,6 @@
   "bin": "./lib/cli.js",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
-  "scripts": {
-    "build": "cjsb -d"
-  },
   "dependencies": {
     "tikka-compile": "workspace:*",
     "tikka-declaration": "workspace:*",

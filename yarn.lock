@@ -2614,20 +2614,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cjsb@npm:0.0.6":
-  version: 0.0.6
-  resolution: "cjsb@npm:0.0.6"
+"cjsb@npm:0.0.8":
+  version: 0.0.8
+  resolution: "cjsb@npm:0.0.8"
   dependencies:
     "@babel/core": ^7.14.8
     "@babel/preset-env": ^7.14.8
     "@babel/preset-typescript": ^7.14.5
-    cjsb: ^0.0.3
+    cjsb: ^0.0.7
     fs-extra: ^10.0.0
     glob: ^7.1.7
     yargs-parser: ^20.2.9
   bin:
     cjsb: lib/cli.js
-  checksum: dfdc5f168125ae9c2b0ab9096f4617d0b35f19cce7559ef632c9617356eb15a1bd395d12fb0405de2904e6149db4950e1820b0a4ce1507fe2b07ca8671a1eb8c
+  checksum: bc0d907872a3e27aa98c0159dc52a9b2715a1761b6a93d0f92967d39a8ae0d0795dbaa1dc3bcfb2b1fc32757a549f7b6388085f85a12d86cc0c2cbb723a9a498
   languageName: node
   linkType: hard
 
@@ -2661,6 +2661,23 @@ __metadata:
   bin:
     cjsb: lib/cli.js
   checksum: 8fad8130ef7337cd958e9d8acf7ada4331379372898937ecad70d4d9a5e83788d4c8305b68abdeae748f17060c6ce7409f6799b1c4638f195388a0b4b569ca51
+  languageName: node
+  linkType: hard
+
+"cjsb@npm:^0.0.7":
+  version: 0.0.7
+  resolution: "cjsb@npm:0.0.7"
+  dependencies:
+    "@babel/core": ^7.14.8
+    "@babel/preset-env": ^7.14.8
+    "@babel/preset-typescript": ^7.14.5
+    cjsb: ^0.0.3
+    fs-extra: ^10.0.0
+    glob: ^7.1.7
+    yargs-parser: ^20.2.9
+  bin:
+    cjsb: lib/cli.js
+  checksum: 066a674467fdb0d0f2c79ed6a334b095c1b48c86007e1a7d07a82edc4ca27e445b6526006b586920145f89b117113b43cfeb3fdcf2f2e5385614dc95f6220653
   languageName: node
   linkType: hard
 
@@ -6118,7 +6135,7 @@ __metadata:
     "@types/jest": ^26.0.24
     "@typescript-eslint/eslint-plugin": ^4.28.4
     "@typescript-eslint/parser": ^4.28.4
-    cjsb: 0.0.6
+    cjsb: 0.0.8
     enquirer: ^2.3.6
     eslint: ^7.31.0
     eslint-config-airbnb-typescript: ^12.3.1

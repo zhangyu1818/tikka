@@ -4,11 +4,22 @@
   "workspaces": [
     "packages/*"
   ],
+  "scripts": {
+    "build:packages": "cjsb -d --packages packages/shared packages/transform packages/transform-less packages/transform-sass packages/declaration packages/compile packages/tikka",
+    "lint:script": "eslint packages/**/src/*.ts",
+    "lint:fix": "yarn run lint:script --fix",
+    "tsc:check": "tsc --noEmit",
+    "prettier": "prettier --write packages/**/*",
+    "test": "jest",
+    "release": "node ./scripts/release.js",
+    "publish:packages": "yarn workspaces foreach --no-private npm publish",
+    "postinstall": "husky install"
+  },
   "devDependencies": {
     "@types/jest": "^26.0.24",
     "@typescript-eslint/eslint-plugin": "^4.28.4",
     "@typescript-eslint/parser": "^4.28.4",
-    "cjsb": "0.0.6",
+    "cjsb": "0.0.8",
     "enquirer": "^2.3.6",
     "eslint": "^7.31.0",
     "eslint-config-airbnb-typescript": "^12.3.1",
@@ -23,16 +34,5 @@
     "semver": "^7.3.5",
     "ts-jest": "^27.0.4",
     "typescript": "^4.3.5"
-  },
-  "scripts": {
-    "build:packages": "yarn workspaces foreach run build",
-    "lint:script": "eslint packages/**/src/*.ts",
-    "lint:fix": "yarn run lint:script --fix",
-    "tsc:check": "tsc --noEmit",
-    "prettier": "prettier --write packages/**/*",
-    "test": "jest",
-    "release": "node ./scripts/release.js",
-    "publish:packages": "yarn workspaces foreach --no-private npm publish",
-    "postinstall": "husky install"
   }
 }
