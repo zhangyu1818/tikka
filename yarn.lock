@@ -2271,6 +2271,24 @@ __metadata:
   languageName: node
   linkType: hard
 
+"autoprefixer@npm:^10.3.1":
+  version: 10.3.1
+  resolution: "autoprefixer@npm:10.3.1"
+  dependencies:
+    browserslist: ^4.16.6
+    caniuse-lite: ^1.0.30001243
+    colorette: ^1.2.2
+    fraction.js: ^4.1.1
+    normalize-range: ^0.1.2
+    postcss-value-parser: ^4.1.0
+  peerDependencies:
+    postcss: ^8.1.0
+  bin:
+    autoprefixer: bin/autoprefixer
+  checksum: f220c29c98fe740e27308e418f3e45978ceb209ff0d77276ca01e0ef15089e1936bc1746eac9309c92af15de1a4ace21926aad47a5355e2fa84ffdfabc7f7b0f
+  languageName: node
+  linkType: hard
+
 "babel-jest@npm:^27.0.6":
   version: 27.0.6
   resolution: "babel-jest@npm:27.0.6"
@@ -2533,6 +2551,13 @@ __metadata:
   version: 1.0.30001247
   resolution: "caniuse-lite@npm:1.0.30001247"
   checksum: a44f4b36adc5009c7f81da892c95e66f00893027ffc09975fe4b922a1688da29e542b0be15c39008209d3b7e7b457bf8c83360c18cffb1b4d86e8c747cef3a50
+  languageName: node
+  linkType: hard
+
+"caniuse-lite@npm:^1.0.30001243":
+  version: 1.0.30001249
+  resolution: "caniuse-lite@npm:1.0.30001249"
+  checksum: e066e0fd2ab97944f57f9abb1fe497fe6bfc89f76d50fa5b933a91e25203d7731e7e02d45d922b6dc4bc4c826a7c5c6be500f09950bd5440929cd324ad1f44bb
   languageName: node
   linkType: hard
 
@@ -3621,6 +3646,13 @@ __metadata:
     combined-stream: ^1.0.8
     mime-types: ^2.1.12
   checksum: 6574ff4d2d845c47ba288151a6e0573767eefdee9da358be199e0f0b66aa5c454e7d62ed5e0daef6f84167ba1e9596e064f36f206488e460ef449ef7b653cdfc
+  languageName: node
+  linkType: hard
+
+"fraction.js@npm:^4.1.1":
+  version: 4.1.1
+  resolution: "fraction.js@npm:4.1.1"
+  checksum: 3667dfc48804ba4623f43e8d284a30f9abcb546f59c44dbcb51722e114d77fb06f0fe9bf051db816db6b2679c55dfccb633c4841c3436b2239c5dffcef0a8ccf
   languageName: node
   linkType: hard
 
@@ -5336,6 +5368,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"nanoid@npm:^3.1.23":
+  version: 3.1.23
+  resolution: "nanoid@npm:3.1.23"
+  bin:
+    nanoid: bin/nanoid.cjs
+  checksum: e6dea1da5a593ffdc8cf2676d1d02f0626f07a54a5947a7a1f5ff1fd07901b2f53044c285e98b87eb367f016fde285fd8785d54a2dceeab9c3721f4e618f8326
+  languageName: node
+  linkType: hard
+
 "natural-compare@npm:^1.4.0":
   version: 1.4.0
   resolution: "natural-compare@npm:1.4.0"
@@ -5424,6 +5465,13 @@ __metadata:
   version: 3.0.0
   resolution: "normalize-path@npm:3.0.0"
   checksum: 215a701b471948884193628f3e38910353abf445306b519c42c2a30144b8beb8ca0a684da97bfc2ee11eb168c35c776d484274da4bd8f213d2b22f70579380ee
+  languageName: node
+  linkType: hard
+
+"normalize-range@npm:^0.1.2":
+  version: 0.1.2
+  resolution: "normalize-range@npm:0.1.2"
+  checksum: bca997d800d76b7954b36d394f44bbe65948eb4cca954b2e731cd81a7a5540725dcd237df7cb2006449e705c4803755658b8f23d89f9cc2eb5da464558baba69
   languageName: node
   linkType: hard
 
@@ -5767,6 +5815,24 @@ __metadata:
   dependencies:
     find-up: ^2.1.0
   checksum: 0a8fcbebf0f1aadc7a52c576352a698abef6c389cb00a0847db2d370d05d4c005f855e196d29618b088062f1394711ca6dadd232692ed225511d7e75a198d246
+  languageName: node
+  linkType: hard
+
+"postcss-value-parser@npm:^4.1.0":
+  version: 4.1.0
+  resolution: "postcss-value-parser@npm:4.1.0"
+  checksum: 70831403886859289f650550a38889857022c5bbe264fd5d39cfad5207b3e1d33422edc031c1a922f3ae29d0dff98837a8bf126c840374d2b0079e7d57cf7d71
+  languageName: node
+  linkType: hard
+
+"postcss@npm:^8.3.6":
+  version: 8.3.6
+  resolution: "postcss@npm:8.3.6"
+  dependencies:
+    colorette: ^1.2.2
+    nanoid: ^3.1.23
+    source-map-js: ^0.6.2
+  checksum: 515c26472861ce0f3b0a7945b9ac4732756d2aab6b12950137f72c7c6d90967136ba56e878815edcbf132c5643005dad1e9bbcb14139a948802af10245a8f6e3
   languageName: node
   linkType: hard
 
@@ -6135,6 +6201,7 @@ __metadata:
     "@types/jest": ^26.0.24
     "@typescript-eslint/eslint-plugin": ^4.28.4
     "@typescript-eslint/parser": ^4.28.4
+    autoprefixer: ^10.3.1
     cjsb: 0.0.8
     enquirer: ^2.3.6
     eslint: ^7.31.0
@@ -6321,6 +6388,13 @@ __metadata:
     ip: ^1.1.5
     smart-buffer: ^4.1.0
   checksum: 9a5735cf9be6f756006b4c5ed23f17c15ffbfc0afb04b5d1b49516b7a27818c807a6a5b5419a65a140a1964149ec9ebb6cd8f0e06d7c60282912204d781371db
+  languageName: node
+  linkType: hard
+
+"source-map-js@npm:^0.6.2":
+  version: 0.6.2
+  resolution: "source-map-js@npm:0.6.2"
+  checksum: 8e2f992cfbedb71286fa6f6e011e2fa756b7f4d944ea4b0f49e9ff6ea34ad0a17dc655f067fdddb32efa7b45000e8c59e47a2e875d91744c86a56329b5f58b32
   languageName: node
   linkType: hard
 
@@ -6689,6 +6763,7 @@ __metadata:
     "@types/less": ^3.0.3
     less: ^4.1.1
     tikka-shared: "workspace:*"
+    tikka-types: "workspace:*"
   languageName: unknown
   linkType: soft
 
@@ -6699,6 +6774,7 @@ __metadata:
     "@types/sass": ^1.16.1
     sass: ^1.37.5
     tikka-shared: "workspace:*"
+    tikka-types: "workspace:*"
   languageName: unknown
   linkType: soft
 
@@ -6713,6 +6789,7 @@ __metadata:
     "@babel/preset-typescript": ^7.14.5
     "@types/babel__core": ^7.1.15
     tikka-shared: "workspace:*"
+    tikka-types: "workspace:*"
   peerDependencies:
     "@babel/preset-env": "*"
     "@babel/preset-react": "*"
@@ -6723,6 +6800,15 @@ __metadata:
 "tikka-types@workspace:*, tikka-types@workspace:packages/types":
   version: 0.0.0-use.local
   resolution: "tikka-types@workspace:packages/types"
+  languageName: unknown
+  linkType: soft
+
+"tikka-with-postcss@workspace:packages/with-postcss":
+  version: 0.0.0-use.local
+  resolution: "tikka-with-postcss@workspace:packages/with-postcss"
+  dependencies:
+    postcss: ^8.3.6
+    tikka-types: "workspace:*"
   languageName: unknown
   linkType: soft
 

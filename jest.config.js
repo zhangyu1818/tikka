@@ -10,6 +10,7 @@ module.exports = {
     'tikka-transform$': '<rootDir>/packages/./transform/src',
     'tikka-transform-less$': '<rootDir>/packages/./transform-less/src',
     'tikka-transform-sass$': '<rootDir>/packages/./transform-sass/src',
+    'tikka-with-postcss$': '<rootDir>/packages/./with-postcss/src',
     'tikka-declaration$': '<rootDir>/packages/./declaration/src',
     'tikka-types/(.*)$': '<rootDir>/packages/./types/$1',
   },

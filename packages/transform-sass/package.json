@@ -1,9 +1,12 @@
 {
   "name": "tikka-transform-sass",
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
   "version": "0.0.0-test.2",
   "dependencies": {
     "sass": "^1.37.5",
-    "tikka-shared": "workspace:*"
+    "tikka-shared": "workspace:*",
+    "tikka-types": "workspace:*"
   },
   "devDependencies": {
     "@types/sass": "^1.16.1"

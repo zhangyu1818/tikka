@@ -1,0 +1,9 @@
+{
+  "name": "tikka-with-postcss",
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
+  "dependencies": {
+    "postcss": "^8.3.6",
+    "tikka-types": "workspace:*"
+  }
+}

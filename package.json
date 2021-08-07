@@ -5,7 +5,7 @@
     "packages/*"
   ],
   "scripts": {
-    "build:packages": "cjsb -d --packages packages/shared packages/transform packages/transform-less packages/transform-sass packages/declaration packages/compile packages/tikka",
+    "build:packages": "cjsb -d --packages packages/shared packages/transform packages/transform-less packages/transform-sass packages/with-postcss packages/declaration packages/compile packages/tikka",
     "lint:script": "eslint packages/**/src/*.ts",
     "lint:fix": "yarn run lint:script --fix",
     "tsc:check": "tsc --noEmit",
@@ -19,6 +19,7 @@
     "@types/jest": "^26.0.24",
     "@typescript-eslint/eslint-plugin": "^4.28.4",
     "@typescript-eslint/parser": "^4.28.4",
+    "autoprefixer": "^10.3.1",
     "cjsb": "0.0.8",
     "enquirer": "^2.3.6",
     "eslint": "^7.31.0",
