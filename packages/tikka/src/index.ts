@@ -1,8 +1,11 @@
+import autoprefixer from 'autoprefixer'
+
 import { compile } from 'tikka-compile'
 import { transform } from 'tikka-transform'
 import { transformDeclaration } from 'tikka-declaration'
 import { transformLess } from 'tikka-transform-less'
 import { transformSass } from 'tikka-transform-sass'
+import { withPostcss } from 'tikka-with-postcss'
 
 export type BabelFormat = 'commonjs' | 'module'
 
@@ -30,8 +33,9 @@ const build = (options: Options) => {
         : undefined,
     }),
     declaration && transformDeclaration({ outDir }),
-    transformLess({ outDir }),
-    transformSass({ outDir }),
+    withPostcss([transformLess({ outDir }), transformSass({ outDir })], {
+      plugins: [autoprefixer],
+    }),
   ].filter(Boolean)
   return compile({
     cwd,
@@ -42,6 +46,6 @@ const build = (options: Options) => {
     .run()
 }
 
-export { compile, transform, transformDeclaration, transformLess, transformSass }
+export { compile, transform, transformDeclaration, transformLess, transformSass, withPostcss }
 
 export default build

@@ -1,10 +1,11 @@
 {
   "name": "tikka",
-  "version": "0.0.0-test.3",
+  "version": "0.0.0-test.4",
   "bin": "./lib/cli.js",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
   "dependencies": {
+    "autoprefixer": "^10.3.1",
     "tikka-compile": "workspace:*",
     "tikka-declaration": "workspace:*",
     "tikka-shared": "workspace:*",
