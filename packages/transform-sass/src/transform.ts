@@ -8,7 +8,7 @@ export interface SassTransformOptions {
   test?: RegExp
   exclude?: RegExp
   outDir?: string | string[]
-  filterEmptyOutput?: boolean
+  emptyOutput?: boolean
   sassOptions?: sass.Options
 }
 
@@ -18,7 +18,7 @@ const transformSass: Transform<SassTransformOptions> =
     const {
       test = /\.(scss|sass)$/,
       outDir = '',
-      filterEmptyOutput = true,
+      emptyOutput = false,
       exclude,
       sassOptions,
     } = options
@@ -49,7 +49,7 @@ const transformSass: Transform<SassTransformOptions> =
 
         const css = result.css.toString()
 
-        if (!css && filterEmptyOutput) {
+        if (!css || !emptyOutput) {
           continue
         }
 

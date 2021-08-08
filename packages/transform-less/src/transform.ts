@@ -8,7 +8,7 @@ export interface LessTransformOptions {
   exclude?: RegExp
   outDir?: string | string[]
   inject?: string[]
-  filterEmptyOutput?: boolean
+  emptyOutput?: boolean
   lessOptions?: Less.Options
 }
 
@@ -18,7 +18,7 @@ const transformLess: Transform<LessTransformOptions> =
     const {
       test = /\.less$/,
       outDir = '',
-      filterEmptyOutput = true,
+      emptyOutput = false,
       exclude,
       inject,
       lessOptions,
@@ -54,7 +54,7 @@ const transformLess: Transform<LessTransformOptions> =
           : data
         const { css } = await less.render(injectedData, compilerOptions)
 
-        if (!css && filterEmptyOutput) {
+        if (!css || !emptyOutput) {
           continue
         }
 

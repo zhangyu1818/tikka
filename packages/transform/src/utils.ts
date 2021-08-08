@@ -1,19 +1,16 @@
 import type { TransformState } from 'tikka-types/transform'
 
-import { DEFAULT_BABEL_CONFIG, DEFAULT_TEST, DEFAULT_FORMAT } from './default'
+import { DEFAULT_BABEL_CONFIG, DEFAULT_TEST } from './default'
 
 import type { BabelTransformOptions } from './interface'
 
 export const normalizeFormat = (format: BabelTransformOptions['format']) => {
   if (typeof format === 'string') {
     return {
-      [format]: DEFAULT_FORMAT[format],
+      [format]: './',
     }
   }
-  if (Array.isArray(format)) {
-    return Object.fromEntries(format.map((format) => [format, DEFAULT_FORMAT[format]]))
-  }
-  return format ?? DEFAULT_FORMAT
+  return format ?? { commonjs: './' }
 }
 
 export const mergeOptions = (options: BabelTransformOptions, state: TransformState) => {

@@ -6,8 +6,6 @@ import { testFilesExpect } from 'tikka-shared'
 const root = path.join(__dirname, '..', 'fixtures')
 
 describe('tikka-transform', () => {
-  const format = ['commonjs', 'module'] as any[]
-
   it('should be match js output files', async () => {
     const cwd = path.join(root, 'js')
     await compile({
@@ -17,7 +15,10 @@ describe('tikka-transform', () => {
     })
       .tasks(
         transform({
-          format,
+          format: {
+            commonjs: 'lib',
+            module: 'es',
+          },
         })
       )
       .run()
@@ -33,7 +34,10 @@ describe('tikka-transform', () => {
     })
       .tasks(
         transform({
-          format,
+          format: {
+            commonjs: 'lib',
+            module: 'es',
+          },
         })
       )
       .run()
