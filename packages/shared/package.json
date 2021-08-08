@@ -3,6 +3,9 @@
   "version": "0.0.0-test.4",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
+  "license": "MIT",
+  "author": "zhangyu1818",
+  "repository": "https://github.com/zhangyu1818/tikka",
   "dependencies": {
     "chalk": "^4.1.1"
   },

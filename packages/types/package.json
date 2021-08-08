@@ -1,4 +1,7 @@
 {
   "name": "tikka-types",
-  "version": "0.0.0-test.4"
+  "version": "0.0.0-test.4",
+  "license": "MIT",
+  "author": "zhangyu1818",
+  "repository": "https://github.com/zhangyu1818/tikka"
 }

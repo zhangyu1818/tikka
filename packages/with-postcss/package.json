@@ -2,6 +2,9 @@
   "name": "tikka-with-postcss",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
+  "license": "MIT",
+  "author": "zhangyu1818",
+  "repository": "https://github.com/zhangyu1818/tikka",
   "dependencies": {
     "postcss": "^8.3.6",
     "tikka-types": "workspace:*"
