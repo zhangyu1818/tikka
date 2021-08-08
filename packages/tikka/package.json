@@ -1,6 +1,6 @@
 {
   "name": "tikka",
-  "version": "0.0.0-test.4",
+  "version": "0.0.0-test.5",
   "bin": "./lib/cli.js",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
