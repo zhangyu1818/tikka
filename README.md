@@ -27,7 +27,7 @@ tikka --source src --format commonjs module --outDir lib esm --declaration
 如果需要自定义配置，可以使用 API 的方式来进行打包。
 
 ```javascript
-import { compile, transform, transformDeclaration, transformLess, transformSass } from 'tikka'
+import { compile, transform, transformDeclaration, transformLess, withPostcss, transformSass } from 'tikka'
 
 compile({
   source: 'src',
@@ -43,6 +43,15 @@ compile({
   )
   .run()
 ```
+
+- [`compile` 执行打包](https://github.com/zhangyu1818/tikka#compile)
+- [`transform`转换代码文件](https://github.com/zhangyu1818/tikka#transform)
+- [`transformDeclaration`转换TypeScript定义](https://github.com/zhangyu1818/tikka#transformDeclaration)
+- [`transformLess`转换Less](https://github.com/zhangyu1818/tikka#transformLess)
+- [`transformSass`转换Sass](https://github.com/zhangyu1818/tikka#transformSass)
+- [`withPostcss` PostCSS](https://github.com/zhangyu1818/tikka#withPostcss)
+
+---
 
 ## compile
 
@@ -72,6 +81,8 @@ NodeJS 执行的工作目录，默认为`process.cwd()`。
 
 执行打包
 
+---
+
 ## transform
 
 执行代码文件的转换。
@@ -97,6 +108,8 @@ transform({
 
 `babel`[配置参数](https://babeljs.io/docs/en/options)。
 
+---
+
 ## transformDeclaration
 
 转换`d.ts`。
@@ -112,6 +125,8 @@ transform({
 **compilerOptions?: Record<string, any>**
 
 `tsconfig`的`compilerOptions`属性。
+
+---
 
 ## transformLess
 
@@ -141,6 +156,8 @@ transform({
 
 [Less.Options](https://lesscss.org/usage/#less-options)
 
+---
+
 ## transformSass
 
 转换`sass|scss`文件。
@@ -164,6 +181,8 @@ transform({
 **sassOptions?: sass.Options**
 
 [sass.Options](https://sass-lang.com/documentation/js-api#options)
+
+---
 
 ## withPostcss
 
