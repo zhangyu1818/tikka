@@ -1,0 +1,19 @@
+name: ✅ test
+on: [push, pull_request]
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@master
+
+      - name: install
+        run: yarn install
+
+      - name: tsc:check
+        run: yarn run tsc:check
+      - name: lint
+        run: yarn run lint:script
+
+      - name: test
+        run: yarn run test
