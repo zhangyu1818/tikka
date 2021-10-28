@@ -49,7 +49,7 @@ const transformSass: Transform<SassTransformOptions> =
 
         const css = result.css.toString()
 
-        if (!css || !emptyOutput) {
+        if (!css && !emptyOutput) {
           continue
         }
 

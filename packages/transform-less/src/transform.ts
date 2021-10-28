@@ -33,7 +33,6 @@ const transformLess: Transform<LessTransformOptions> =
     logger.info(`transform ${lessFiles.length} files with less compiler`)
 
     const outputDirs = toArray(outDir)
-
     // eslint-disable-next-line no-restricted-syntax
     for (const outputDir of outputDirs) {
       logger.info(`output less files to ${outputDir || rootOutDir}`)
@@ -54,7 +53,7 @@ const transformLess: Transform<LessTransformOptions> =
           : data
         const { css } = await less.render(injectedData, compilerOptions)
 
-        if (!css || !emptyOutput) {
+        if (!css && !emptyOutput) {
           continue
         }
 
