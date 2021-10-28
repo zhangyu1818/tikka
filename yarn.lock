@@ -1852,6 +1852,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@swc/jest@npm:^0.2.5":
+  version: 0.2.5
+  resolution: "@swc/jest@npm:0.2.5"
+  peerDependencies:
+    "@swc/core": "*"
+  checksum: e46f9ca9c41ee65fb3deecbbb03167a32f0a837843e74069545807bc29ffcbf58c0d5987efa87dbb0893452a332425ad478c622d972656d92f82171e2f10a039
+  languageName: node
+  linkType: hard
+
 "@tootallnate/once@npm:1":
   version: 1.1.2
   resolution: "@tootallnate/once@npm:1.1.2"
@@ -6334,6 +6343,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "root-workspace-0b6124@workspace:."
   dependencies:
+    "@swc/core": ^1.2.105
+    "@swc/jest": ^0.2.5
     "@types/jest": ^26.0.24
     "@typescript-eslint/eslint-plugin": ^4.28.4
     "@typescript-eslint/parser": ^4.28.4

@@ -16,6 +16,8 @@
     "postinstall": "husky install"
   },
   "devDependencies": {
+    "@swc/core": "^1.2.105",
+    "@swc/jest": "^0.2.5",
     "@types/jest": "^26.0.24",
     "@typescript-eslint/eslint-plugin": "^4.28.4",
     "@typescript-eslint/parser": "^4.28.4",
