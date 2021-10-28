@@ -17,6 +17,7 @@
       "tikka-compile": ["packages/compile/src"],
       "tikka-shared": ["packages/shared/src"],
       "tikka-transform": ["packages/transform/src"],
+      "tikka-transform-swc": ["packages/transform-swc/src"],
       "tikka-transform-less": ["packages/transform-less/src"],
       "tikka-transform-sass": ["packages/transform-sass/src"],
       "tikka-with-postcss": ["packages/with-postcss/src"],

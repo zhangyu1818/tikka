@@ -1,0 +1,13 @@
+{
+  "name": "tikka-transform-swc",
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
+  "license": "MIT",
+  "author": "zhangyu1818",
+  "repository": "https://github.com/zhangyu1818/tikka",
+  "dependencies": {
+    "@swc/core": "^1.2.105",
+    "tikka-shared": "workspace:*",
+    "tikka-types": "workspace:*"
+  }
+}

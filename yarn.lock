@@ -1661,6 +1661,22 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@napi-rs/triples@npm:^1.0.3":
+  version: 1.0.3
+  resolution: "@napi-rs/triples@npm:1.0.3"
+  checksum: 2ae19201aa1c5e8105294d6cb1c1d8a0c72686c102cd781f9d35a5ad8377c5a7a1f3437a05782daf3878913efab122f39d9b650e129148a9e32210d2c9ce567a
+  languageName: node
+  linkType: hard
+
+"@node-rs/helper@npm:^1.0.0":
+  version: 1.2.1
+  resolution: "@node-rs/helper@npm:1.2.1"
+  dependencies:
+    "@napi-rs/triples": ^1.0.3
+  checksum: fd9a40320ed4b5dc8b7700d7e3d4c27a9fed1e218aa035fb72acf9c849443d4d7708cd3a21cbff3ac3ada1a10b31f26076810ab349448d5eba4ed8873f505c9e
+  languageName: node
+  linkType: hard
+
 "@nodelib/fs.scandir@npm:2.1.5":
   version: 2.1.5
   resolution: "@nodelib/fs.scandir@npm:2.1.5"
@@ -1713,6 +1729,126 @@ __metadata:
   dependencies:
     "@sinonjs/commons": ^1.7.0
   checksum: 5ce48e40db14d7e1419bae287b84559133d580cb56130b51d7479dff318bfafed87531f8b48f618f07e3c9a6113c9e3f00286805d55de64986b9cccb8eb6d5cf
+  languageName: node
+  linkType: hard
+
+"@swc/core-android-arm64@npm:^1.2.105":
+  version: 1.2.105
+  resolution: "@swc/core-android-arm64@npm:1.2.105"
+  checksum: 506cd3f88419421f46e1b9220731992023fdd183a708b13e87a4bcc5919aa32f11ba351f0e2689fb8c5b64e2737f401bfa4888a2edf505d7c74d1890aad41553
+  languageName: node
+  linkType: hard
+
+"@swc/core-darwin-arm64@npm:^1.2.105":
+  version: 1.2.105
+  resolution: "@swc/core-darwin-arm64@npm:1.2.105"
+  checksum: 52d904f33abe4283071b648b9d3496c5f991dba723ede2f293a83a481641fce5c458ae63fe7ac040bbc209a039d065953bc29c1ea9c350c09344ad25111e611d
+  languageName: node
+  linkType: hard
+
+"@swc/core-darwin-x64@npm:^1.2.105":
+  version: 1.2.105
+  resolution: "@swc/core-darwin-x64@npm:1.2.105"
+  checksum: 080cac00a57f62b84ae8e198918c24456612aeb21e1ecdfb0813344a7b8c1e4f16c5a7c02d66d5cadc3f5658a6621f71beae989ae4e4f7d3f9a7310fe25b7e20
+  languageName: node
+  linkType: hard
+
+"@swc/core-linux-arm-gnueabihf@npm:^1.2.105":
+  version: 1.2.105
+  resolution: "@swc/core-linux-arm-gnueabihf@npm:1.2.105"
+  checksum: be25c7bb77e67b88b2b4f44c5a9e7838b8da54da8fed13033d5df9cfb7491b6567b3e7fcf59beda103ef47310b67d8a2ad16de07e7d1670a569c79db4f265cd9
+  languageName: node
+  linkType: hard
+
+"@swc/core-linux-arm64-gnu@npm:^1.2.105":
+  version: 1.2.105
+  resolution: "@swc/core-linux-arm64-gnu@npm:1.2.105"
+  checksum: a18fbd869f61777ff6910dc83bf43d9e8003adec2ef6300417557bc3d6c91c960201c96b0156f59f07dde39ab431c44b8395255367f550d0d9f0aa201a151d10
+  languageName: node
+  linkType: hard
+
+"@swc/core-linux-arm64-musl@npm:^1.2.105":
+  version: 1.2.105
+  resolution: "@swc/core-linux-arm64-musl@npm:1.2.105"
+  checksum: 7cc798be0fcba2300efb8b1eb78f1f30b2393a27cd6dc8bab8b42b067c62c58ba2452da71ee45814d5305cccd527bc03c8284584f351598dce4848b6da61fcfc
+  languageName: node
+  linkType: hard
+
+"@swc/core-linux-x64-gnu@npm:^1.2.105":
+  version: 1.2.105
+  resolution: "@swc/core-linux-x64-gnu@npm:1.2.105"
+  checksum: 6a7c5fe2c3c490dccb5cc0743c4fc029ed2e2b5ccad655462ef9d6d7dded655201e12c3ac6934e818167f8eee6e2950571fd8b4604a95373812208bb5a85a262
+  languageName: node
+  linkType: hard
+
+"@swc/core-linux-x64-musl@npm:^1.2.105":
+  version: 1.2.105
+  resolution: "@swc/core-linux-x64-musl@npm:1.2.105"
+  checksum: f7101989ea4ae9ab1a8e54364f9d4ab661cbc78d391f6cb8ae433a041922455803ed1dd2f0052db173ced50e58d3f0069ab8d39051fa1e9f913941f4e1d9c5d7
+  languageName: node
+  linkType: hard
+
+"@swc/core-win32-arm64-msvc@npm:^1.2.105":
+  version: 1.2.105
+  resolution: "@swc/core-win32-arm64-msvc@npm:1.2.105"
+  checksum: 7a7815d8447c45b82d070194037b1a9f08cbda4ec1f3c0b892a60ee7007fb361036a97c7ead56a3eaa5b8168af48b656232570e6c30bd162d4f7364e9d071cf0
+  languageName: node
+  linkType: hard
+
+"@swc/core-win32-ia32-msvc@npm:^1.2.105":
+  version: 1.2.105
+  resolution: "@swc/core-win32-ia32-msvc@npm:1.2.105"
+  checksum: 1b8d48c5a08d584f7e2a80b4e15bdb5c81595272888ec4c5124932df5fd34bb7da8beb5b57367ec3f6c83548ac40d3cfe3d971a0dcfdb3ddb262bd943a54b35c
+  languageName: node
+  linkType: hard
+
+"@swc/core-win32-x64-msvc@npm:^1.2.105":
+  version: 1.2.105
+  resolution: "@swc/core-win32-x64-msvc@npm:1.2.105"
+  checksum: 9f0dff9398d7047838ba55126b42e699ab52efeebbe202de2d1f5876db6ab0058c5128be160a64b97de76e846867eb51e9a639512de73a061394553e6d9687ef
+  languageName: node
+  linkType: hard
+
+"@swc/core@npm:^1.2.105":
+  version: 1.2.105
+  resolution: "@swc/core@npm:1.2.105"
+  dependencies:
+    "@node-rs/helper": ^1.0.0
+    "@swc/core-android-arm64": ^1.2.105
+    "@swc/core-darwin-arm64": ^1.2.105
+    "@swc/core-darwin-x64": ^1.2.105
+    "@swc/core-linux-arm-gnueabihf": ^1.2.105
+    "@swc/core-linux-arm64-gnu": ^1.2.105
+    "@swc/core-linux-arm64-musl": ^1.2.105
+    "@swc/core-linux-x64-gnu": ^1.2.105
+    "@swc/core-linux-x64-musl": ^1.2.105
+    "@swc/core-win32-arm64-msvc": ^1.2.105
+    "@swc/core-win32-ia32-msvc": ^1.2.105
+    "@swc/core-win32-x64-msvc": ^1.2.105
+  dependenciesMeta:
+    "@swc/core-android-arm64":
+      optional: true
+    "@swc/core-darwin-arm64":
+      optional: true
+    "@swc/core-darwin-x64":
+      optional: true
+    "@swc/core-linux-arm-gnueabihf":
+      optional: true
+    "@swc/core-linux-arm64-gnu":
+      optional: true
+    "@swc/core-linux-arm64-musl":
+      optional: true
+    "@swc/core-linux-x64-gnu":
+      optional: true
+    "@swc/core-linux-x64-musl":
+      optional: true
+    "@swc/core-win32-arm64-msvc":
+      optional: true
+    "@swc/core-win32-ia32-msvc":
+      optional: true
+    "@swc/core-win32-x64-msvc":
+      optional: true
+  checksum: 9bd88b6d79b111f4c0e76c16a24ace5c42c54d82ca4e9c5a69629d1a848c78226e1321c7d884532514eb0ea458bb5ebbd34680a710842a2fe3352a90aa6b1532
   languageName: node
   linkType: hard
 
@@ -6773,6 +6909,16 @@ __metadata:
   dependencies:
     "@types/sass": ^1.16.1
     sass: ^1.37.5
+    tikka-shared: "workspace:*"
+    tikka-types: "workspace:*"
+  languageName: unknown
+  linkType: soft
+
+"tikka-transform-swc@workspace:packages/transform-swc":
+  version: 0.0.0-use.local
+  resolution: "tikka-transform-swc@workspace:packages/transform-swc"
+  dependencies:
+    "@swc/core": ^1.2.105
     tikka-shared: "workspace:*"
     tikka-types: "workspace:*"
   languageName: unknown
