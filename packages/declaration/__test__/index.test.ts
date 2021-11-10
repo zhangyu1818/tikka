@@ -8,5 +8,5 @@ describe('transform declaration', () => {
     const cwd = path.resolve(__dirname, '..', 'fixtures')
     await compile({ cwd, source: 'files', outDir: 'dist' }).tasks(transformDeclaration).run()
     testFilesExpect(cwd)
-  })
+  }, 10000)
 })
