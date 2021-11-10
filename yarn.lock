@@ -6914,7 +6914,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"tikka-transform-sass@workspace:packages/transform-sass":
+"tikka-transform-sass@workspace:*, tikka-transform-sass@workspace:packages/transform-sass":
   version: 0.0.0-use.local
   resolution: "tikka-transform-sass@workspace:packages/transform-sass"
   dependencies:
@@ -6960,7 +6960,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"tikka-with-postcss@workspace:packages/with-postcss":
+"tikka-with-postcss@workspace:*, tikka-with-postcss@workspace:packages/with-postcss":
   version: 0.0.0-use.local
   resolution: "tikka-with-postcss@workspace:packages/with-postcss"
   dependencies:
@@ -6979,6 +6979,8 @@ __metadata:
     tikka-shared: "workspace:*"
     tikka-transform: "workspace:*"
     tikka-transform-less: "workspace:*"
+    tikka-transform-sass: "workspace:*"
+    tikka-with-postcss: "workspace:*"
     yargs-parser: ^20.2.9
   bin:
     tikka: ./lib/cli.js
