@@ -5,7 +5,7 @@
     "packages/*"
   ],
   "scripts": {
-    "build:packages": "cjsb -d --packages packages/shared packages/transform packages/transform-less packages/transform-sass packages/with-postcss packages/declaration packages/compile packages/tikka",
+    "build:packages": "cjsb -d --packages packages/shared packages/transform packages/transform-swc packages/transform-less packages/transform-sass packages/with-postcss packages/declaration packages/compile packages/tikka",
     "lint:script": "eslint packages/**/src/*.ts",
     "lint:fix": "yarn run lint:script --fix",
     "tsc:check": "tsc --noEmit",
