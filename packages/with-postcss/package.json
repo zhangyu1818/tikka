@@ -9,5 +9,5 @@
     "postcss": "^8.3.6",
     "tikka-types": "workspace:*"
   },
-  "version": "0.0.0-test.6"
+  "version": "0.0.0-alpha.0"
 }
