@@ -9,5 +9,6 @@
     "@swc/core": "^1.2.105",
     "tikka-shared": "workspace:*",
     "tikka-types": "workspace:*"
-  }
+  },
+  "version": "0.0.0-test.6"
 }

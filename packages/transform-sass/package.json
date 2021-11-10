@@ -2,7 +2,7 @@
   "name": "tikka-transform-sass",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
-  "version": "0.0.0-test.5",
+  "version": "0.0.0-test.6",
   "license": "MIT",
   "author": "zhangyu1818",
   "repository": "https://github.com/zhangyu1818/tikka",
